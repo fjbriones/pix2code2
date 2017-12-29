@@ -66,6 +66,7 @@ class Generator:
 
                         if verbose:
                             print("Yield batch")
+						#include a generator for images only for autoencoder
                         if images_only:
                             yield(batch_input_images, batch_input_images)
                         else:
