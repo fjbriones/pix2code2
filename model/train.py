@@ -14,7 +14,7 @@ from classes.model.pix2code2 import *
 from classes.model.autoencoder_image import *
 from keras.backend import clear_session
 
-
+#removed some training parameters, so as to make the code input easier
 def run(input_path, output_path, train_autoencoder=False):
     np.random.seed(1234)
 
@@ -32,14 +32,19 @@ def run(input_path, output_path, train_autoencoder=False):
     voc = Vocabulary()
     voc.retrieve(output_path)
 
+	
     generator = Generator.data_generator(voc, gui_paths, img_paths, batch_size=BATCH_SIZE, input_shape=input_shape, generate_binary_sequences=True)
+	
+	#Included a generator for images only as an input for autoencoders
     generator_images = Generator.data_generator(voc, gui_paths, img_paths, batch_size=BATCH_SIZE, input_shape=input_shape, generate_binary_sequences=True, images_only=True)
 
+	#For training of autoencoders 
     if train_autoencoder:
         autoencoder_model = autoencoder_image(input_shape, input_shape, output_path)
         autoencoder_model.fit_generator(generator_images, steps_per_epoch=steps_per_epoch)
         clear_session()
     
+	#Model for training pix2code2
     model = pix2code2(input_shape, output_size, output_path)
     model.fit_generator(generator, steps_per_epoch=steps_per_epoch)
 

@@ -27,6 +27,7 @@ meta_dataset = np.load("{}/meta_dataset.npy".format(trained_weights_path))
 input_shape = meta_dataset[0]
 output_size = meta_dataset[1]
 
+#Changed the pix2code model to pix2code2
 model = pix2code2(input_shape, output_size, trained_weights_path)
 model.load(trained_model_name)
 
