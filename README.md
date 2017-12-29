@@ -1,6 +1,6 @@
 # pix2code2
 
-pix2code iS a network introduced by Tony Beltramelli which transforms image designs for different UIs into their respective DSL code. 
+pix2code is a network introduced by Tony Beltramelli which transforms image designs for different UIs into their respective DSL code. 
 
 The original paper found [here](https://arxiv.org/abs/1705.07962) and the original demo code found [here](https://github.com/tonybeltramelli/pix2code)
 
@@ -89,12 +89,9 @@ Compile generated code to target language:
 ```sh
 cd compiler
 
-# compile .gui file to Android XML UI
-./android-compiler.py <input file path>.gui
-
-# compile .gui file to iOS Storyboard
-./ios-compiler.py <input file path>.gui
-
 # compile .gui file to HTML/CSS (Bootstrap style)
 ./web-compiler.py <input file path>.gui
 ```
+
+## Sample Test results
+Sample input image and output html file can be found on the folder [tests](https://github.com/fjbriones/pix2code2/tree/master/tests). All of these are from the eval_set of the web images dataset. The compilers and datasets used for recreating the code were still derived from the original work of Tony Beltramelli.
