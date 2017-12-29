@@ -53,7 +53,7 @@ cd model
 ./train.py ../datasets/web/training_features ../bin 1
 ```
 
-Generate code for batch of GUIs in web evaluation set:
+Generate code for batch of GUIs in web evaluation set, if you want to use pretrained weights, unzip this [file](https://1drv.ms/u/s!Ao8Y5FscWK9imo0GtV5u3sXOr6sc_A) and copy the pix2code2.h5 file to the bin folder:
 ```sh
 mkdir code
 cd model
