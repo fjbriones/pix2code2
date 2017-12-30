@@ -60,13 +60,13 @@ cd model
 
 # generate DSL code (.gui file), the default search method is greedy
 # usage: generate.py <trained weights path> <trained model name> <input image> <output path> <search method (default: greedy)>
-./generate.py ../bin pix2code ../datasets/web/eval_set ../code
+./generate.py ../bin pix2code2 ../datasets/web/eval_set ../code
 
 # equivalent to command above
-./generate.py ../bin pix2code ../datasets/web/eval_set ../code greedy
+./generate.py ../bin pix2code2 ../datasets/web/eval_set ../code greedy
 
 # generate DSL code with beam search and a beam width of size 3
-./generate.py ../bin pix2code ../datasets/web/eval_set ../code 3
+./generate.py ../bin pix2code2 ../datasets/web/eval_set ../code 3
 ```
 
 Generate code for a single GUI image:
@@ -76,13 +76,13 @@ cd model
 
 # generate DSL code (.gui file), the default search method is greedy
 # usage: sample.py <trained weights path> <trained model name> <input image> <output path> <search method (default: greedy)>
-./sample.py ../bin pix2code ../test_gui.png ../code
+./sample.py ../bin pix2code2 ../test_gui.png ../code
 
 # equivalent to command above
-./sample.py ../bin pix2code ../test_gui.png ../code greedy
+./sample.py ../bin pix2code2 ../test_gui.png ../code greedy
 
 # generate DSL code with beam search and a beam width of size 3
-./sample.py ../bin pix2code ../test_gui.png ../code 3
+./sample.py ../bin pix2code2 ../test_gui.png ../code 3
 ```
 
 Compile generated code to target language:
